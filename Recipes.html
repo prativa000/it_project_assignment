@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipes - TastyExpress</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="Recipes.html">
+  <link rel="stylesheet" href="contact.html">
+  <link rel="stylesheet" href="index.html">
+  <link rel="stylesheet" href="About.html">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .recipes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .recipe-card {
+      width: 45%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      background-color: #fff;
+    }
+
+    .recipe-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .recipe-card h3 {
+      margin-top: 10px;
+      color: #d35400;
+    }
+
+    .recipe-card p, .recipe-card ul {
+      margin-top: 5px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: #2c3e50;
+    }
+
+    .section-title p {
+      font-size: 18px;
+      color: #7f8c8d;
+    }
+             /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .footer-links a::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            transition: transform 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links a:hover::before {
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #b2bec3;
+        }
+        
+        .app-badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .app-badge {
+            display: block;
+            width: 150px;
+            height: 45px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .app-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-badge i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 90px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+       
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">
+          <i class="fas fa-utensils"></i>
+          Tasty<span>Express</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Recipes Section -->
+  <section class="recipes">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Delicious Recipes</h2>
+        <p>Try these tasty dishes you can easily make at home.</p>
+      </div>
+
+      <div class="recipes-grid">
+
+        <!-- Veggie Pizza -->
+        <div class="recipe-card">
+          <img src="image1.jpg" alt="Veggie Pizza">
+          <h3>Veggie Pizza</h3>
+          <p>A delicious pizza loaded with veggies and cheese.</p>
+          <h4>Ingredients:</h4>
+          <ul>
+            <li>Pizza base, pizza sauce, mozzarella cheese</li>
+            <li>Bell peppers, black olives, onions, mushrooms</li>
+            <li>Oregano, chili flakes</li>
+          </ul>
+        </div>
+
+        <!-- Chicken Tandoori -->
+        <div class="recipe-card">
+          <img src="image4.jpg" alt="Chicken Tandoori">
+          <h3>Chicken Tandoori</h3>
+          <p>Spicy, smoky grilled chicken marinated in traditional Indian spices.</p>
+          <h4>Ingredients:</h4>
+          <ul>
+            <li>Chicken pieces (legs or thighs)</li>
+            <li>Yogurt, lemon juice</li>
+            <li>Ginger-garlic paste, garam masala, chili powder, turmeric</li>
+            <li>Salt, oil</li>
+          </ul>
+        </div>
+
+        <!-- Classic Burger -->
+        <div class="recipe-card">
+          <img src="image2.jpg" alt="Classic Beef Burger">
+          <h3>Classic Beef Burger</h3>
+          <p>Juicy beef patty stacked with fresh veggies and cheese.</p>
+          <h4>Ingredients:</h4>
+          <ul>
+            <li>Burger bun, beef patty, cheddar cheese</li>
+            <li>Tomato slices, pickles, lettuce, onion</li>
+            <li>Ketchup, mayonnaise</li>
+          </ul>
+        </div>
+
+        <!-- Indian Thali -->
+        <div class="recipe-card">
+          <img src="image3.jpg" alt="Indian Thali">
+          <h3>Indian Thali</h3>
+          <p>A hearty platter with butter chicken, rajma, rice, naan & salad.</p>
+          <h4>Ingredients:</h4>
+          <ul>
+            <li>Butter chicken, rajma (kidney beans curry)</li>
+            <li>Jeera rice, naan bread</li>
+            <li>Fresh salad</li>
+          </ul>
+        </div>
+
+        <div class="recipe-card">
+  <img src="image8.jpg" alt="Nepali Momos">
+  <h3>Momos</h3>
+  <p>Steamed or pan-fried dumplings with a savory filling, served with a spicy achar.</p>
+  <h4>Ingredients:</h4>
+  <ul>
+    <li>Wrapper made from flour and water</li>
+    <li>Filling: ground meat or mixed vegetables + spices</li>
+    <li>Cooking styles: steamed, kothey (pan-fried), fried, or jhol (in broth)</li>
+    <li>Served with tomato‑garlic‑chili achar or sesame chutney</li>
+  </ul>
+</div>
+
+<div class="recipe-card">
+  <img src="image5.jpg" alt="Nepali Chicken Sekuwa">
+  <h3>Chicken Sekuwa</h3>
+  <p>Juicy grilled chicken skewers marinated in Himalayan spices and yogurt, basted with butter.</p>
+  <h4>Ingredients:</h4>
+  <ul>
+    <li>Chicken (thighs recommended), cut into 1″ cubes</li>
+    <li>Marinade: yogurt, timur (Sichuan pepper), turmeric, garam masala, garlic + ginger paste</li>
+    <li>Spices: cumin, coriander, red chilies, mustard oil/lemon juice, salt & pepper</li>
+    <li>Cooking: threaded on soaked bamboo skewers → grilled or oven-roasted → basted with butter</li>
+    <li>Served hot with rice or roti and a tangy tomato or mint chutney</li>
+  </ul>
+</div>
+
+<div class="recipe-card">
+  <img src="image6.jpg" alt="Chicken Biryani">
+  <h3>Chicken Biryani</h3>
+  <p>Layered marinated chicken and fragrant basmati rice, cooked with whole spices and saffron for a rich, aromatic feast.</p>
+  <h4>Ingredients:</h4>
+  <ul>
+    <li><strong>Chicken & Marinade:</strong> Chicken pieces + yogurt, ginger-garlic paste, turmeric, red chili, garam/biryani masala, lemon juice & salt</li>
+    <li><strong>Whole spices:</strong> bay leaf, cardamom, cloves, cinnamon stick, star anise, cumin/fennel seeds</li>
+    <li><strong>Rice:</strong> Basmati rice—parboiled in spiced water ≈90% cooked</li>
+    <li><strong>Fried onions:</strong> Caramelized to golden brown (“birista”) for garnish</li>
+    <li><strong>Layering:</strong> Alternate chicken, rice, fried onions, fresh mint/coriander, saffron-infused milk & ghee</li>
+    <li><strong>Cooking:</strong> Dum (covered & steamed) on low heat until chicken is tender and rice is fluffy</li>
+  </ul>
+</div>
+
+<!-- Vegetable Samosa Ingredients -->
+<div class="recipe-card">
+  <img src="image7.jpg" alt="Vegetable Samosa">
+  <h3>Vegetable Samosa</h3>
+  <p>Crispy pastry filled with spiced potatoes and peas.</p>
+  <h4>Ingredients:</h4>
+  <ul>
+    <li>Pastry: all-purpose flour, salt, oil/ghee (4–6 tbsp), ajwain/carom seeds (½–1 tsp), water</li>
+    <li>Filling:
+      <ul>
+       
+        <li>Pinch of asafoetida, fenugreek/cumin/fennel seeds (optional)</li>
+        <li>Salt to taste</li>
+        <li>Juice of ½ lemon</li>
+        <li>A handful of fresh coriander leaves</li>
+      </ul>
+    </li>
+    <li>Oil: 
+      <ul>
+        <li>2 tbsp for sautéing filling</li>
+        <li>Oil for deep-frying (or brushing for baking option)</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  
+      <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Navigate</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Recipie</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Collaborate</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Explore careers</a></li>
+                        <li><a href="#">Become a rider</a></li>
+                        <li><a href="#">Tasty ads</a></li>
+                        <li><a href="#">Feed your team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Download Our App</h3>
+                    <div class="app-badges">
+                        <a href="#" class="app-badge">
+                            <i class="fab fa-apple"></i> App Store
+                        </a>
+                        <a href="#" class="app-badge">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © 2025 TastyExpress. All rights reserved.</p>
+                <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Sitemap</a></p>
+            </div>
+        </div>
+    </footer>
+    <style>
+            @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 90px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .feature-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+ 
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+
+</body>
+</html>
