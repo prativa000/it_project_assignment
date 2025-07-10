@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Layout Example</title>
+  <style>
+    /* Container for all images and text */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Image 1: 5px border */
+    .image1 {
+      border: 5px solid black;
+    }
+
+    /* Image 2: 100x100 pixels with link to original image */
+    .image2 {
+      width: 100px;
+      height: 100px;
+    }
+
+    /* Image 3: Aligned to the left */
+    .image3-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .image3 {
+      float: left;
+      margin-right: 10px;
+    }
+
+    /* Image 4: 50px horizontal and vertical spacing */
+    .image4 {
+      margin: 50px;
+    }
+
+    /* Optional: Style for text alignment */
+    .text {
+      max-width: 600px;
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Image 1 -->
+    <div>
+      <img src="image1.jpg" alt="Image 1" class="image1">
+      <p class="text">This is Image 1 with a 5px solid black border.</p>
+    </div>
+
+    <!-- Image 2 -->
+    <div>
+      <a href="image2.jpeg" target="_blank">
+        <img src="image2.jpeg" alt="Image 2" class="image2">
+      </a>
+      <p class="text">Click on Image 2 to view the original size.</p>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="image3-container">
+      <img src="image3.jpg" alt="Image 3" class="image3">
+      <p class="text">Image 3 is aligned to the left side of this text block.</p>
+    </div>
+
+    <!-- Image 4 -->
+    <div>
+      <img src="image4.jpg" alt="Image 4" class="image4">
+      <p class="text">Image 4 has 50px spacing on all sides.</p>
+    </div>
+  </div>
+</body>
+</html>

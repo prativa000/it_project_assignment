@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lists Examples</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h3 {
+            font-size: 1.7rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px dashed #3498db;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            padding: 12px 0;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        ul li:before {
+            content: "•";
+            color: #e74c3c;
+            font-size: 2rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        ol {
+            list-style-type: none;
+            counter-reset: custom-counter;
+            padding-left: 20px;
+        }
+        
+        ol li {
+            counter-increment: custom-counter;
+            padding: 12px 0;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        ol li:before {
+            content: counter(custom-counter, lower-roman) ".";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        dl {
+            padding: 20px;
+            background: #e8f4fc;
+            border-radius: 8px;
+        }
+        
+        dt {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.4rem;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            border-left: 4px solid #3498db;
+        }
+        
+        dd {
+            margin-left: 30px;
+            font-size: 1.2rem;
+            padding: 8px 0;
+            color: #2c3e50;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            border-top: 1px solid #bdc3c7;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(52, 152, 219, 0.2), transparent);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML Lists Demonstration</h1>
+            <p>Examples of Unordered, Ordered, and Definition Lists</p>
+        </header>
+        
+        <div class="content">
+            <!-- Section 1: Unordered List -->
+            <section>
+                <h2>Example on Unordered List</h2>
+                <ul>
+                    <li>Sportstar</li>
+                    <li>Business Week</li>
+                    <li>Time</li>
+                </ul>
+            </section>
+            
+            <!-- Section 2: Ordered List -->
+            <section>
+                <h2>Example on Ordered List</h2>
+                <ol>
+                    <li>Sportstar</li>
+                    <li>Business Week</li>
+                    <li>Time</li>
+                </ol>
+            </section>
+            
+            <!-- Section 3: Definition List -->
+            <section>
+                <h3>Example on Definition List</h3>
+                <dl>
+                    <dt>Sports Magazine</dt>
+                    <dd>Sportstar - A leading sports magazine covering various sports events globally</dd>
+                    
+                    <dt>Business Magazine</dt>
+                    <dd>Business Week - A premier business magazine providing insights on global markets and finance</dd>
+                    
+                    <dt>General Interest Magazine</dt>
+                    <dd>Time - A weekly news magazine covering current events, politics, and culture</dd>
+                </dl>
+            </section>
+            
+            <!-- Additional examples section -->
+            <section>
+                <h3>More About HTML Lists</h3>
+                <p>HTML provides three main types of lists:</p>
+                
+                <dl>
+                    <dt>Unordered Lists (UL)</dt>
+                    <dd>Used for items where order doesn't matter, typically displayed with bullet points</dd>
+                    
+                    <dt>Ordered Lists (OL)</dt>
+                    <dd>Used for items where order is important, displayed with numbers or letters</dd>
+                    
+                    <dt>Definition Lists (DL)</dt>
+                    <dd>Used for terms and their definitions, consisting of DT (term) and DD (definition) elements</dd>
+                </dl>
+                
+                <p class="highlight">These list types help organize content meaningfully and improve content structure.</p>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Created with HTML5 & CSS3 | Demonstrating List Elements</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Our Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .radio-group {
+            margin: 5px 0;
+        }
+        button {
+            padding: 8px 15px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <h2>Search our web site!</h2>
+        
+        <div class="form-group">
+            <fieldset>
+                <legend>Where do you want to search?</legend>
+                
+                <div class="radio-group">
+                    <input type="radio" id="wholeSite" name="searchLocation" value="whole" checked>
+                    <label for="wholeSite">Whole site</label>
+                </div>
+                
+                <div class="radio-group">
+                    <input type="radio" id="businessPartners" name="searchLocation" value="business">
+                    <label for="businessPartners">Business Partners Section</label>
+                </div>
+                
+                <div class="radio-group">
+                    <input type="radio" id="corporateComms" name="searchLocation" value="corporate">
+                    <label for="corporateComms">Corporate Communications Section</label>
+                </div>
+                
+                <div class="radio-group">
+                    <input type="radio" id="lotusEducation" name="searchLocation" value="education">
+                    <label for="lotusEducation">Lotus Education Section</label>
+                </div>
+            </fieldset>
+        </div>
+        
+        <div class="form-group">
+            <label for="searchTerms">Enter a word or two that we can search on:</label>
+            <input type="text" id="searchTerms" name="searchTerms" required>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+</body>
+</html>
